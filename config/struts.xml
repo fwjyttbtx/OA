@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置为开发模式 xml文件改动不需重新发布 -->
+    <constant name="struts.devMode" value="false" />
+    <!-- 将struts的扩展名配置为action方便事务管理 -->
+    <constant name="struts.action.extension" value="action" />
+	
+
+    <package name="default" namespace="/" extends="struts-default">
+		<!-- 测试action与spring整合后class就不用写上全类名了,只需写入spring中的bean名称就行了 -->
+		<action name="test" class="testAction">
+			<result name="success">/test.jsp</result>
+		</action>
+    </package>
+
+
+</struts>
